@@ -41,18 +41,92 @@ In T flip flop, "T" defines the term "Toggle". In SR Flip Flop, we provide only 
 4.	Create nodes for inputs and outputs to generate the timing diagram.
 5.	For different input combinations, generate the timing diagram.
 
-
 ## Program:
 
+## SR-Flipflop:
+```
+  module exp5a(s,r,clk,q,qbar);
+  input s,r,clk;
+  output reg q;
+  output qbar;
+  always@(posedge clk)
+  begin
+  q=s|((~r)&q);
+  end
+  assign qbar=~q;
+  endmodule
+  ```
+  
+## D-Flipflop:
+```
+   module exp5b(d,clk,q,qbar);
+   input d,clk;
+   output reg q;
+   output qbar;
+   always@(posedge clk)
+   begin
+   q=((~q)&d)|(q&d);
+   end
+   assign qbar=~q;
+   endmodule
+```
+
+## JK-Flipflop:
+```
+   module exp5c(j,k,clk,q,qbar);
+   input j,k,clk;
+   output reg q;
+   output qbar;
+   always@(posedge clk)
+   begin
+   q=((~q)&j)|(q&(~k));
+   end
+   assign qbar=~q;
+   endmodule
+```
+
+## T-Flipflop:
+```
+   module exp5d(t,clk,q,qbar);
+   input t,clk;
+   output reg q;
+   output qbar;
+   always@(posedge clk)
+   begin
+   q=((~q)&t)|(q&(~t));
+   end
+   assign qbar=~q;
+   endmodule
+```
 
 ## RTL Schematic:
 
+## SR Flipfliop:
+![image](https://github.com/jeyaqbalan7/Flipflops/assets/119393851/bef9f595-80de-473b-9a52-aa74955f1acd)
 
+## D Flipflop:
+![image](https://github.com/jeyaqbalan7/Flipflops/assets/119393851/1b69459e-d663-4770-ae9c-eec86dd0b75b)
+
+## JK Flipflop:
+![image](https://github.com/jeyaqbalan7/Flipflops/assets/119393851/e6f0cbea-c50f-46e8-95d2-1cf4fc6eb37d)
+
+## T Flipflop:
+![image](https://github.com/jeyaqbalan7/Flipflops/assets/119393851/ff0935f0-8bf9-403d-8140-5a4d1a105a1f)
 
 
 ## Timing Diagram:
 
+## SR Flipfliop:
+![image](https://github.com/jeyaqbalan7/Flipflops/assets/119393851/9bac71de-c418-411c-b769-90a8075850b6)
 
+## D Flipflop:
+![image](https://github.com/jeyaqbalan7/Flipflops/assets/119393851/609719f9-e7c6-46e4-983d-d608e34fe398)
+
+## JK Flipflop:
+![image](https://github.com/jeyaqbalan7/Flipflops/assets/119393851/54f90888-9db2-4896-a732-65d21cfa254b)
+
+## T Flipflop:
+![image](https://github.com/jeyaqbalan7/Flipflops/assets/119393851/5ed93a3b-34dd-4f0e-90a9-281d7b6cb4d3)
 
 ## Result:
 Thus the SR, D, JK and T flipflops are implemented and the characteristic tables are verified.
